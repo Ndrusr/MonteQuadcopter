@@ -80,7 +80,7 @@ bool Quadcopter::isArmed()
   return this->armed;
 }
 
-void Quadcopter::getStabilisedSpeed(int* speed, int* actSpeed, float rollDiff, float pitchDiff){
+int* Quadcopter::getStabilisedSpeed(int* speed, int* actSpeed, float rollDiff, float pitchDiff){
   //each motor has actual Speed and speed at which we want them to fly...
   //actual Speed is calculated as follows +- half rollDiff +- half pitchDiff
   this->speed[0] = (int) speed[0] + (rollDiff) - (pitchDiff);
