@@ -1,10 +1,12 @@
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial (7, 8); //RX, TX
-#include "I2Cdev.h"
-#include "MPU6050_6Axis_MotionApps20.h"
+
+//#include "I2Cdev.h" 
+//#include "MPU6050.h" 
+//above libraries are superfluous, are already included in the MPU6050 library
+
 #include <PID_v1.h>
 #include <EEPROM.h>
-//#include "MPU6050.h" // not necessary if using MotionApps include file
+#include <MPU6050_6Axis_MotionApps20.h> 
 
 
 #define ADDR_PITCH_OFFSET 0
@@ -14,6 +16,8 @@ SoftwareSerial mySerial (7, 8); //RX, TX
 #define BR_MOTOR 10
 #define BL_MOTOR 11
 
+
+SoftwareSerial mySerial (7, 8); //RX, TX
 //---------------------------------PID------------------------------------
 //Define Variables we'll be connecting to
 double rollSetpoint, rollInput, rollOutput;
